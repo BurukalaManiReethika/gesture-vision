@@ -1,10 +1,13 @@
+import eventlet
+eventlet.monkey_patch()
+
 import base64
 import time
 
 import cv2
 import numpy as np
 import mediapipe as mp
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_socketio import SocketIO
 
 app = Flask(__name__)
@@ -166,7 +169,6 @@ def on_disconnect():
 
 
 def request_sid():
-    from flask import request
     return request.sid
 
 

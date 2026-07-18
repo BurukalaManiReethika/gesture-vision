@@ -187,7 +187,7 @@ def on_frame(data):
 
     frame, current_filter = process_frame(frame, state)
 
-    ok, buffer = cv2.imencode(".jpg", frame, [cv2.IMWRITE_JPEG_QUALITY, 75])
+    ok, buffer = cv2.imencode(".jpg", frame, [cv2.IMWRITE_JPEG_QUALITY, 60])
     if not ok:
         return
     out_b64 = "data:image/jpeg;base64," + base64.b64encode(buffer).decode("utf-8")
